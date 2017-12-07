@@ -42,7 +42,8 @@ class NewVisitorTest(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_name('tr')
         self.assertTrue(
-            any(row.text == '1: Visit Space' for row in rows) # returns true if iterble is True
+            any(row.text == '1: Visit Space' for row in rows), # returns true if iterble is True
+            'New to-do item did not appear in the table'
         )
 
         # there is still a text box inviting him to add another item
